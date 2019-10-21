@@ -7,30 +7,28 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class JsonParser {
-    private InputStream inputStream;
-    private URL url;
-    private HttpURLConnection connection;
-    private final String urlQueryString = "http://jsonvat.com/";
+    private static InputStream inputStream;
+    private static URL url;
+    private static HttpURLConnection connection;
+    private static final String urlQueryString = "http://jsonvat.com/";
 
 
-    private String streamToString(InputStream inputStream) {
+
+
+    private static String streamToString(InputStream inputStream) {
         String text = new Scanner(inputStream, "UTF-8").useDelimiter("\\Z").next();
         return text;
     }
 
 
-    public String jsonGetRequest(){
+    public static String jsonGetRequest(){
         String json = null;
         try {
             url = new URL(urlQueryString);
             connection = (HttpURLConnection) url.openConnection();
-            connection.setDoOutput(true);
-            connection.setInstanceFollowRedirects(false);
-            connection.setRequestMethod("GET");
-            connection.setRequestProperty("Content-Type", "application/json");
-            connection.setRequestProperty("charset", "utf-8");
-            connection.connect();
             inputStream = connection.getInputStream();
+
+            // input stream to string
             json = streamToString(inputStream);
 
 
@@ -41,3 +39,23 @@ public class JsonParser {
         return json;
     }
 }
+
+
+
+
+
+
+
+
+
+//??
+// connection.setDoOutput(true);
+
+//??
+// connection.setInstanceFollowRedirects(false);
+
+//?
+// connection.setRequestMethod("GET");
+
+// ?
+// connection.connect();
