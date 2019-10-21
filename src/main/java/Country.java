@@ -6,7 +6,7 @@ public class Country {
     private String code;
     private String county_code;
     private String effective_from;
-    private String [] rates;
+    private String[] rates;
 
     public Country(String name, String code, String county_code, String effective_from, String[] rates) {
         this.name = name;

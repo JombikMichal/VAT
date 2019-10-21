@@ -1,5 +1,3 @@
-import netscape.javascript.JSObject;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -13,15 +11,13 @@ public class JsonParser {
     private static final String urlQueryString = "http://jsonvat.com/";
 
 
-
-
     private static String streamToString(InputStream inputStream) {
         String text = new Scanner(inputStream, "UTF-8").useDelimiter("\\Z").next();
         return text;
     }
 
 
-    public static String jsonGetRequest(){
+    public static String jsonGetRequest() {
         String json = null;
         try {
             url = new URL(urlQueryString);
@@ -32,30 +28,10 @@ public class JsonParser {
             json = streamToString(inputStream);
 
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.getStackTrace();
         }
 
         return json;
     }
 }
-
-
-
-
-
-
-
-
-
-//??
-// connection.setDoOutput(true);
-
-//??
-// connection.setInstanceFollowRedirects(false);
-
-//?
-// connection.setRequestMethod("GET");
-
-// ?
-// connection.connect();
