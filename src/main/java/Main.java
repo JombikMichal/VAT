@@ -1,5 +1,9 @@
 public class Main {
+
+
+
     public static void main(String[] args) {
-        System.out.println("Hello");
+        JsonParser jsonParser = new JsonParser();
+        System.out.println("Hello" + jsonParser.jsonGetRequest());
     }
 }
