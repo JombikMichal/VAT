@@ -7,7 +7,8 @@ public class JsonMapper {
     }
 
     public void print() {
-        //System.out.println("JsonMapper " + this.json);
+        System.out.println("JsonMapper " + this.json);
+        
 
 
     }
