@@ -4,7 +4,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-public class JsonParser {
+public class Connection {
     private static InputStream inputStream;
     private static URL url;
     private static HttpURLConnection connection;
@@ -28,10 +28,12 @@ public class JsonParser {
             json = streamToString(inputStream);
 
 
+
         } catch (IOException e) {
             e.getStackTrace();
         }
 
         return json;
     }
+
 }
